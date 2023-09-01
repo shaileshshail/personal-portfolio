@@ -1,0 +1,526 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --HEADER-BGCOLOR: #333;
+    --HEADER-COLOR: #f5f5f5;
+    --ABOUT-BGCOLOR:white;
+    --PADDING: 2rem 1rem;
+}
+
+html {
+    font-family: 'Nunito', sans-serif;
+    color: var(--HEADER-BGCOLOR);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.navbar{
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    height: 8vh;
+}
+
+.brand-title{
+    font-size: 1.5rem;
+    margin: .5rem;
+}   
+
+.navbar-links ul{
+    display: flex;
+}
+
+.navbar-links li{
+    list-style: none;
+}
+.navbar-links li a{
+    text-decoration: none;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    padding: 1em;
+    display: block;
+}
+.navbar-links li a:hover{
+    background-color: #555;
+}
+
+.toggle-btn{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-btn .bar{
+    height: 3px;
+    width: 100%;
+    background-color: var(--HEADER-COLOR);
+    border-radius: 10px;
+}
+
+@media screen and (max-width:576px) {
+    .toggle-btn{
+        display: flex;
+    }
+    .navbar-links{
+        display: none;
+        width: 100%;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links ul{
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-links li a{
+        padding: .5rem ;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+/* ---MAIN--- */
+
+main{
+    width: 100%;
+}
+
+/* || NAVIGATE TOP BUTTON */
+.navi-top{
+    z-index: 1;
+    position: fixed;
+    bottom:1rem;
+    right:1rem;
+}
+.navi-top img{
+    width: 35px;
+    height: auto;
+}
+
+/* || PROFILE */
+
+.profile{
+    background-color: lightblue;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding: var(--PADDING) ;
+}
+
+.profile .profile-data{
+    height: 55vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 0.5em;
+    font-size: 1rem;
+}
+.profile-data button{
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    font-size: 1.3em;
+    transition-duration: 0.3s;
+
+}
+.profile-data button:hover{
+    border: 2px solid var(--HEADER-BGCOLOR);
+    background-color: gainsboro;
+    color: var(--HEADER-BGCOLOR);
+}
+
+.profile-data .social{
+    padding: 3px 0;
+    display: flex;
+    gap: 1em;
+
+}
+.profile-data .social img{
+    width: 30px;
+    height: 30px;
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+}
+.profile-data .social img:hover,
+.profile-data .social img:active
+{
+ transform: scale(120%);   
+}
+
+.profile .profile-pic{
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+}
+.profile-pic img{
+    width: 250px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 10px 10px 1px gray;
+}
+.profile .text-one{
+    font-size: 1.5em;
+}
+.profile .text-two{
+    font-size: 3em;
+}
+.profile .text-three{
+    font-size: 1.5em;
+}
+.profile .text-four{
+    font-size: 1.3em;
+}
+
+.wave {
+    position: relative;
+    background-color: #e4f9ff;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(121% + 1.3px);
+    height: 93px;
+}
+
+.wave .shape-fill {
+    fill: lightblue;
+}
+
+.about{
+    background-color: rgb(228, 249, 255);
+    width: 100%;
+    padding: var(--PADDING);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-data{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-icon{
+    background-color: var(--HEADER-BGCOLOR);
+    width: 8rem;
+    height: 5px;
+    border-radius: 5px;
+    transition: all 0.5s ;
+}
+
+.about .text-one{
+    padding: 1em 0;
+    font-size: 1.5rem;
+}
+.about .text-two{
+    font-size: 1.2rem;
+}
+
+.skills{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    padding: 1em 0;
+}
+.skillset{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    gap: 0.5em;
+
+    padding: 1.5em 0;
+}
+
+.skillset .box{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+.skillset .box img{
+    width: 80px;
+    height: 80px;
+}
+
+
+.spacer{
+    aspect-ratio: 3/4;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.layer1{
+    background-image: url('../img/layered-waves-haikei-mobile.svg');
+}
+
+
+
+
+
+.projects{
+    background-color: lightblue;
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects h1{
+    font-size: 1.5rem;
+}
+.projects .container{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+
+    padding: 2rem 0;
+
+}
+.projects .container .box{
+    width: min(320px,90vw);
+    height: min(230px,30vh);
+    background-color: var(--HEADER-COLOR);
+    padding: 1em;
+    overflow-x:unset;
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+    box-shadow: 5px 5px #cacaca;
+}
+.projects .container .box:hover{
+    transform: scale(110%);
+}
+
+
+.projects .title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0 0 0.5em 0;
+}
+.projects a:any-link{
+    color: var(--HEADER-BGCOLOR);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+.contact{
+    background-color:rgb(228, 249, 255);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding:var(--PADDING);
+    text-align: center;
+}
+.contact__title{
+    font-size: 1.5rem;
+}
+.contact__media{
+    display: flex;
+    gap: 3em;
+}
+.contact__media img{
+    width: 50px;
+    height: 50px;
+}
+
+.contact .text-one{
+    font-size: 1.7rem;
+}
+.contact .text-two{
+    font-size: 1.3rem;
+}
+
+.contact form{
+    font-family: inherit;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 1rem;
+}   
+
+.contact input{
+    min-width: 75vw;
+    height: min(35px,5vh);
+    outline: none;
+    transition: 0.5s;
+    border: 3px solid #e0e0e0;
+    border-radius: 7px;
+    padding: 3px;
+    font-style: normal;
+
+}
+.contact textarea{
+    min-width: 75vw;
+    max-width: 75vw;
+    min-height: min(70px,10vh);
+    max-height: max(150px,25vh);
+    outline: none;
+    transition: 0.5s;
+    border: 3px solid #e0e0e0;
+    border-radius: 7px;
+    padding: 3px;
+    font-family: inherit;
+}
+
+
+.contact input:focus,
+.contact textarea:focus{
+    border: 1.5px solid var(--HEADER-BGCOLOR);
+}
+
+.contact button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    transition: .5s;
+}
+.contact button:hover{
+
+    background-color: var(--HEADER-COLOR);
+    color: var(--HEADER-BGCOLOR);
+    border: 3px solid var(--HEADER-BGCOLOR);
+    
+}
+
+
+footer{
+    position:absolute;
+    width: 100%;
+    text-align: center;
+    height: 8vh;
+    padding: 1rem 0;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+}
+
+
+@media screen and (min-width:576px) {
+    .profile{
+        flex-flow: row;
+        padding: 3rem;
+        height: 100vh;
+        align-items: center;
+    }
+    .profile .profile-data{
+        width: 65%;
+        font-size: 1.5rem;
+        padding-left: 3em;
+    }
+    .profile-pic img{
+        width: 450px;
+        height: auto;
+    }
+        
+    .spacer{
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: 60vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .layer1{
+        background-image: url('../img/layered-waves-haikei-desktop.svg');
+    }
+
+    .about{
+        flex-flow: row;
+        gap: 5rem;
+    }
+    .about-data{
+        font-size: 1.5rem;
+        width: 45%;
+    }
+    .about-data .text{
+    }
+    .skills{
+        padding: 1em;
+        background-color: #f7e8e8;
+        border-radius: 30px;
+        width: 40%;
+    }
+    .skillset{
+        gap: 1.5em;
+    }
+
+    .projects .container{
+        gap: 4rem;
+
+    
+    }
+    .projects .container .box{
+        width: min(400px,90vw);
+        height: min(350px,35vh);
+    }
+    .projects .title{
+        font-size: 1.7rem;
+    }
+    .projects .desc{
+        font-size: 1.2rem;
+    }
+    
+}
