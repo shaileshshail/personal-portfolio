@@ -16,6 +16,7 @@
 html {
     font-family: 'Nunito', sans-serif;
     color: var(--HEADER-BGCOLOR);
+    scroll-behavior: smooth;
 }
 
 img {
@@ -62,6 +63,7 @@ img {
 }
 .navbar-links li a:hover{
     background-color: #555;
+    
 }
 
 .toggle-btn{
@@ -112,6 +114,7 @@ img {
 
 main{
     width: 100%;
+    padding-top: 8vh;
 }
 
 /* || NAVIGATE TOP BUTTON */
@@ -147,9 +150,19 @@ main{
     gap: 0.5em;
     font-size: 1rem;
 }
-.profile-data button{
-    width: 150px;
-    height: 40px;
+
+.profile .resume-social{
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column wrap;
+    padding-top:1rem;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.profile button{
+    width: 170px;
+    height: 45px;
     border: none;
     border-radius: 12px;
     background-color: var(--HEADER-BGCOLOR);
@@ -164,15 +177,18 @@ main{
     color: var(--HEADER-BGCOLOR);
 }
 
+.profile .resume-link{
+    margin: 0 auto;
+}
 .profile-data .social{
     padding: 3px 0;
     display: flex;
-    gap: 1em;
+    gap: 2rem;
 
 }
 .profile-data .social img{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     transition: ease-in-out;
     transition-duration: 0.3s;
 }
@@ -183,7 +199,6 @@ main{
 }
 
 .profile .profile-pic{
-    padding: 1rem;
     display: grid;
     place-content: center;
 }
@@ -209,7 +224,6 @@ main{
 .wave {
     position: relative;
     background-color: #e4f9ff;
-    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -227,6 +241,7 @@ main{
 .wave .shape-fill {
     fill: lightblue;
 }
+
 
 .about{
     background-color: rgb(228, 249, 255);
@@ -287,6 +302,10 @@ main{
     width: 80px;
     height: 80px;
 }
+.skillset .box figcaption{
+    font-size: large;
+    font-weight: 600;
+}
 
 
 .spacer{
@@ -305,8 +324,9 @@ main{
 
 
 .projects{
-    background-color: lightblue;
-    width: 100%;
+    background-image: url('../img/wave-project.svg');
+    background-repeat: no-repeat;
+    background-size: cover;    width: 100%;
     padding: 1rem 0;
     display: flex;
     flex-flow: column nowrap;
@@ -337,7 +357,7 @@ main{
     box-shadow: 5px 5px #cacaca;
 }
 .projects .container .box:hover{
-    transform: scale(110%);
+    transform: scale(103%);
 }
 
 
@@ -380,10 +400,21 @@ main{
     gap: 3em;
 }
 .contact__media img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    color: var(--HEADER-BGCOLOR); 
+    transition-duration: 0.3s; 
+}
+.contact__media img:hover,
+.contact__media img:active{
+    transform: scale(110%); 
 }
 
+.contact .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .contact .text-one{
     font-size: 1.7rem;
 }
@@ -486,22 +517,44 @@ footer{
     .layer1{
         background-image: url('../img/layered-waves-haikei-desktop.svg');
     }
+    .wave {
+        position: relative;
+        background-color: #e4f9ff;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .wave svg {
+        position: relative;
+        display: block;
+        width: calc(121% + 1.3px);
+        height: 93px;
+    }
+    
+    .wave .shape-fill {
+        fill: lightblue;
+    }
+    
 
     .about{
         flex-flow: row;
         gap: 5rem;
+        height: 100vh;
     }
     .about-data{
         font-size: 1.5rem;
         width: 45%;
-    }
-    .about-data .text{
     }
     .skills{
         padding: 1em;
         background-color: #f7e8e8;
         border-radius: 30px;
         width: 40%;
+        box-shadow: 0 0 10px 7px rgba(193, 181, 181, 0.309);
+
     }
     .skillset{
         gap: 1.5em;
@@ -514,13 +567,21 @@ footer{
     }
     .projects .container .box{
         width: min(400px,90vw);
-        height: min(350px,35vh);
+        height: min(450px,40vh);
     }
     .projects .title{
         font-size: 1.7rem;
     }
     .projects .desc{
+        text-align: center;
         font-size: 1.2rem;
     }
-    
+    .contact .text-two{
+        width: 50%;
+        text-align: center;
+    }
+    .contact input,
+    .contact textarea{
+        min-width: 45vw;
+    }
 }
